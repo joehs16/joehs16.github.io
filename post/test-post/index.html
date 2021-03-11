@@ -1,12 +1,288 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta property="og:title" content="Test Post"><meta property="og:description" content="Insert Lead paragraph here.
-test test test test test"><meta property="og:type" content="article"><meta property="og:url" content="https://www.joehsieh.com/post/test-post/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-03-09T21:19:02-05:00"><meta property="article:modified_time" content="2021-03-09T21:19:02-05:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Test Post"><meta name=twitter:description content="Insert Lead paragraph here.
-test test test test test"><title>Test Post | JOEHSIEH.COM</title><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-32x32.png sizes=32x32><link href="https://fonts.googleapis.com/css?family=Oswald:400" rel=stylesheet><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css integrity=sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://www.joehsieh.com/css/bundle.min.7ca6cd3bb53a831d18b6183000ae658b8d6f672f7acab1b00f788e5fe8b5d844.css integrity="sha256-fKbNO7U6gx0YthgwAK5li41vZy96yrGwD3iOX+i12EQ="><link rel=me type=text/html href=https://www.linkedin.com/in/joseph-hsieh-49972219/><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-32x32.png sizes=32x32><link rel=alternate type=application/rss+xml href=https://www.joehsieh.com/index.xml><meta charset=utf-8><meta name=author content="Joe Hsieh"><meta name=copyright content="© 2021, Joseph Hsieh, All rights reserved."><meta name=description content="Insert Lead paragraph here.
-test test test test test"></head><body><nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark py-1 top-nav"><div class=container><a class="navbar-brand pr-2" href=https://www.joehsieh.com/>JOEHSIEH.COM</a>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta property="og:title" content="Test Post"><meta property="og:description" content="Demo of AzureNormalizePipeline Last edited: Mar 05, 2021
+Description This function was build in support of the BIGIDEAS Lab&rsquo;s Covidentify Project (Duke University). The intention of the function is to extract, transform, and load the unstructured json data from the database that houses the Fitbit and Garmin API pulls into Microsoft Azure&rsquo;s ML Studio.
+Background Because of the nature of Duke&rsquo;s Internal Review Board (IRB), the lab does not have direct control over the API pulls and thus using noSQL was not an option at this time."><meta property="og:type" content="article"><meta property="og:url" content="https://www.joehsieh.com/post/test-post/"><meta property="article:section" content="post"><meta property="article:published_time" content="2021-03-09T21:19:02-05:00"><meta property="article:modified_time" content="2021-03-09T21:19:02-05:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Test Post"><meta name=twitter:description content="Demo of AzureNormalizePipeline Last edited: Mar 05, 2021
+Description This function was build in support of the BIGIDEAS Lab&rsquo;s Covidentify Project (Duke University). The intention of the function is to extract, transform, and load the unstructured json data from the database that houses the Fitbit and Garmin API pulls into Microsoft Azure&rsquo;s ML Studio.
+Background Because of the nature of Duke&rsquo;s Internal Review Board (IRB), the lab does not have direct control over the API pulls and thus using noSQL was not an option at this time."><title>Test Post | JOEHSIEH.COM</title><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-32x32.png sizes=32x32><link href="https://fonts.googleapis.com/css?family=Oswald:400" rel=stylesheet><link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css integrity=sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO crossorigin=anonymous><link rel=stylesheet href=https://use.fontawesome.com/releases/v5.5.0/css/all.css integrity=sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU crossorigin=anonymous><link rel=stylesheet href=https://www.joehsieh.com/css/bundle.min.7ca6cd3bb53a831d18b6183000ae658b8d6f672f7acab1b00f788e5fe8b5d844.css integrity="sha256-fKbNO7U6gx0YthgwAK5li41vZy96yrGwD3iOX+i12EQ="><link rel=me type=text/html href=https://www.linkedin.com/in/joseph-hsieh-49972219/><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=https://www.joehsieh.com/images/favicon-32x32.png sizes=32x32><link rel=alternate type=application/rss+xml href=https://www.joehsieh.com/index.xml><meta charset=utf-8><meta name=author content="Joe Hsieh"><meta name=copyright content="© 2021, Joseph Hsieh, All rights reserved."><meta name=description content="Demo of AzureNormalizePipeline Last edited: Mar 05, 2021
+Description This function was build in support of the BIGIDEAS Lab&amp;rsquo;s Covidentify Project (Duke University). The intention of the function is to extract, transform, and load the unstructured json data from the database that houses the Fitbit and Garmin API pulls into Microsoft Azure&amp;rsquo;s ML Studio.
+Background Because of the nature of Duke&amp;rsquo;s Internal Review Board (IRB), the lab does not have direct control over the API pulls and thus using noSQL was not an option at this time."></head><body><nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark py-1 top-nav"><div class=container><a class="navbar-brand pr-2" href=https://www.joehsieh.com/>JOEHSIEH.COM</a>
 <button class="navbar-toggler collapsed" type=button data-toggle=collapse data-target=#navbarCollapse aria-controls=navbarCollapse aria-expanded=false aria-label="Toggle navigation">
 <i class="fas fa-bars"></i></button><div class="navbar-collapse collapse" id=navbarCollapse><ul class="navbar-nav mr-auto"><li class=nav-item><a class="nav-link active" href=https://www.joehsieh.com/categories/development/>Development</a></li><li class=nav-item><a class="nav-link active" href=https://www.joehsieh.com/categories/golang/>Golang</a></li><li class=nav-item><a class="nav-link active" href=https://www.joehsieh.com/about/>About</a></li></ul><div class="social-icons d-none d-lg-block"><a class="py-2 px-2" href=https://www.linkedin.com/in/joseph-hsieh-49972219/><i class="fab fa-linkedin"></i></a><a class="py-2 px-2" href=https://www.joehsieh.com/index.xml><i class="fas fa-rss"></i></a></div></div></div></nav><header class="feature-image d-print-none"></header><div class=main><div class="container mt-4 post"><h1>Test Post</h1><div class=mb-3><small><strong>By Joe Hsieh</strong>
 | <i class="far fa-calendar-alt"></i>&nbsp;Mar 9, 2021&nbsp;
-| <i class="fa fa-tags" title=Tags aria-hidden=true></i><a href=https://www.joehsieh.com/tags/joe/>joe</a></small></div><div class="share-icons d-flex justify-content-center d-print-none"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&text=Test%20Post&tw_p=tweetbutton" class=p-2 title="Share on Twitter" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Tweet</small></div></a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&t=Test%20Post" class=p-2 title="Share on Facebook" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&title=Test%20Post&source=mattbutton.com" class=p-2 title="Share on LinkedIn" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href=javascript:window.print() title="Print this article" class=p-2 target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-print fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Print</small></div></a></div><div class="mt-4 mb-4 main-content"><p><strong>Insert Lead paragraph here.</strong></p><p>test test test
-test test</p><div class="share-icons d-flex justify-content-center d-print-none"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&text=Test%20Post&tw_p=tweetbutton" class=p-2 title="Share on Twitter" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Tweet</small></div></a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&t=Test%20Post" class=p-2 title="Share on Facebook" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&title=Test%20Post&source=mattbutton.com" class=p-2 title="Share on LinkedIn" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href=javascript:window.print() title="Print this article" class=p-2 target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-print fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Print</small></div></a></div></div></div><div class="sidebar d-print-none d-none d-xl-block"><h2>Joe Hsieh</h2><div>Wecome! This is where I discuss projects, interests, and my passions</div><a href=https://www.joehsieh.com/about/ class="btn btn-outline-secondary mt-3" role=button>Read More...</a><h2 class=mt-4>Top Posts</h2><a href=https://www.joehsieh.com/post/creating-a-new-theme/ class=nav-link>Creating a New Theme</a>
+| <i class="fa fa-tags" title=Tags aria-hidden=true></i><a href=https://www.joehsieh.com/tags/joe/>joe</a></small></div><div class="share-icons d-flex justify-content-center d-print-none"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&text=Test%20Post&tw_p=tweetbutton" class=p-2 title="Share on Twitter" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Tweet</small></div></a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&t=Test%20Post" class=p-2 title="Share on Facebook" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&title=Test%20Post&source=mattbutton.com" class=p-2 title="Share on LinkedIn" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href=javascript:window.print() title="Print this article" class=p-2 target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-print fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Print</small></div></a></div><div class="mt-4 mb-4 main-content"><h1 id=demo-of-azurenormalizepipeline>Demo of AzureNormalizePipeline</h1><p>Last edited: Mar 05, 2021</p><h2 id=description>Description</h2><p>This function was build in support of the BIGIDEAS Lab&rsquo;s Covidentify Project (Duke University). The intention of the function is to extract, transform, and load the unstructured json data from the database that houses the Fitbit and Garmin API pulls into Microsoft Azure&rsquo;s ML Studio.</p><h2 id=background>Background</h2><p>Because of the nature of Duke&rsquo;s Internal Review Board (IRB), the lab does not have direct control over the API pulls and thus using noSQL was not an option at this time. Without transformation, the json data was unusable to perform any modeling. The entire project was migrated to Azure during the month of Dec 2021, and this package was written to help transform and load the data for use in a Covid detection model.</p><h2 id=how-to-import-the-package>How to import the package</h2><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>from</span> <span class=nn>AzureNormalizePipeline</span> <span class=kn>import</span> <span class=o>*</span>
+</code></pre></div><h2 id=load-the-data-from-a-azure-dataset>Load the data from a Azure Dataset</h2><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># azureml-core of version 1.0.72 or higher is required</span>
+<span class=c1># azureml-dataprep[pandas] of version 1.1.34 or higher is required</span>
+<span class=kn>from</span> <span class=nn>azureml.core</span> <span class=kn>import</span> <span class=n>Workspace</span><span class=p>,</span> <span class=n>Dataset</span>
+
+<span class=n>subscription_id</span> <span class=o>=</span> <span class=s1>&#39;9ec123f2-bbdb-4786-bdf0-22f18be7fa34&#39;</span>
+<span class=n>resource_group</span> <span class=o>=</span> <span class=s1>&#39;ml_covidentify&#39;</span>
+<span class=n>workspace_name</span> <span class=o>=</span> <span class=s1>&#39;covidentify_analysis&#39;</span>
+
+<span class=n>workspace</span> <span class=o>=</span> <span class=n>Workspace</span><span class=p>(</span><span class=n>subscription_id</span><span class=p>,</span> <span class=n>resource_group</span><span class=p>,</span> <span class=n>workspace_name</span><span class=p>)</span>
+
+<span class=n>dataset</span> <span class=o>=</span> <span class=n>Dataset</span><span class=o>.</span><span class=n>get_by_name</span><span class=p>(</span><span class=n>workspace</span><span class=p>,</span> <span class=n>name</span><span class=o>=</span><span class=s1>&#39;covid_participant_positive&#39;</span><span class=p>)</span>
+
+<span class=c1>### OPTIONAL: the function can be used with an Azure Dataset or with a pandas DataFrame (pandas is recommended) ###</span>
+<span class=n>df</span> <span class=o>=</span> <span class=n>dataset</span><span class=o>.</span><span class=n>to_pandas_dataframe</span><span class=p>()</span>
+</code></pre></div><p>Within the AzureNormalizePipeline package there are two functions:</p><ul><li>the main json_normalizer function: performs the transformation and loading work</li><li>whichPromptNames function: provides a list of possible prompt names for the user to look at and iterate over</li></ul><p>A demo of the functionality is shown below.</p><h2 id=demo-of-codewhichpromptnamescode>Demo of whichPromptNames</h2><p>From whichPromptNames&rsquo;s documentation:</p><blockquote><p>This function is to help users identify which prompt names are available in json_normalizer function. This is manually inputted and if new prompt names are added, this needs to be updated.</p><p><strong>INPUTS</strong>
+device: either &ldquo;garmin&rdquo; or &ldquo;fitbit&rdquo;.
+timePeriod: Either &ldquo;historical&rdquo; or &ldquo;current&rdquo;. When users enrolled into study, their &ldquo;historical&rdquo; data was shared, &ldquo;current&rdquo; data is collected and uploaded to the prompt database.</p><p><strong>OUTPUTS</strong>
+Outputs a list of prompt names.</p></blockquote><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=c1># prompt = whichPromptNames(&#34;garmin&#34;, &#34;historical&#34;) &lt;- not incorporated yet</span>
+<span class=c1># print(&#34;&gt;&gt;&gt; garmin, historical:&#34;, prompt)</span>
+<span class=n>prompt</span> <span class=o>=</span> <span class=n>whichPromptNames</span><span class=p>(</span><span class=s2>&#34;garmin&#34;</span><span class=p>,</span> <span class=s2>&#34;current&#34;</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&gt;&gt;&gt; garmin, current:&#34;</span><span class=p>,</span> <span class=n>prompt</span><span class=p>)</span>
+<span class=n>prompt</span> <span class=o>=</span> <span class=n>whichPromptNames</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;historical&#34;</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&gt;&gt;&gt; fitbit, historical:&#34;</span><span class=p>,</span> <span class=n>prompt</span><span class=p>)</span>
+<span class=n>prompt</span> <span class=o>=</span> <span class=n>whichPromptNames</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;current&#34;</span><span class=p>)</span>
+<span class=k>print</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&gt;&gt;&gt; fitbit, current:&#34;</span><span class=p>,</span> <span class=n>prompt</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt; garmin, current: ['covid_garmin_activity', 'covid_garmin_daily', 'covid_garmin_epoch', 'covid_garmin_sleep']
+
+&gt;&gt;&gt; fitbit, historical: ['covid_fitbit_heart_rate_intraday_backfill', 'covid_fitbit_steps_intraday_backfill', 'covid_fitbit_floors_intraday_backfill', 'covid_fitbit_floors_intraday_backfill', 'covid_fitbit_elevation_intraday_backfill', 'covid_fitbit_distance_intraday_backfill', 'covid_fitbit_calories_intraday_backfill', 'covid_fitbit_sleep_intraday_backfill']
+
+&gt;&gt;&gt; fitbit, current: ['heart_rate_intraday', 'sleep', 'calories_intraday', 'distance_intraday', 'elevation_intraday', 'floors_intraday', 'steps_intraday', 'r15_daily_sleep', 'weekly_r15_sleep_api', 'weekly_r15_water_api', 'weekly_r15_food_api']
+</code></pre><blockquote><p>Using these lists, a user can use a for-loop to iterate over the possible prompt names to quickly generate the needed output datasets.</p></blockquote><h2 id=demo-of-codejson_normalizercode>Demo of json_normalizer</h2><p>This code is built off of <strong>Pandas'</strong> json_normalize, but because of the nature of our nested jsons and exisitng relational data, more transformation work had to be incorporated before normalization could occur. Additonally, because each promptName has a different json structure, different keyword arguments needed to be implemented for each promptName to make a process that was generalizable for the entire data.</p><p>From json_normalizer&rsquo;s documentation:</p><blockquote><p>This function will extract an Azure Dataset from a Azure Dataset Consume<br>transform the nested json into a relational table and load the transformed<br>table directly into the Azure dataSets Assets list.</p><p><strong>INPUTS</strong>
+device: either &ldquo;garmin&rdquo; or &ldquo;fitbit&rdquo;
+timePeriod: Either &ldquo;historical&rdquo; or &ldquo;current&rdquo;. When users enrolled into study, their &ldquo;historical&rdquo; data was shared, &ldquo;current&rdquo; data is collected and uploaded to the prompt database.
+promptName: name of the type of data collected.
+data: dataset from the targeted Azure DataSet Consume.
+aggSummary (optional): for some garmin promptNames, it makes more sense to display the data in the aggregated summaries form, which is one level above the default summaries.
+ignoreInputs (optional): if turned on, skips the default user inputs.
+prefix (optional): used in conjunction when &lsquo;ignoreInputs&rsquo; is turned on to set the uploaded filename&rsquo;s prefix.
+pandas (optional): Allows using a pandas dataFrame instead of using a Azure dataset. There is a performance boost when converting to a pandas dataFrame outside of the function.</p><p><strong>OUTPUTS</strong>
+Automatically uploads the transformed data into the Azure dataSets Assets list.</p></blockquote><h3 id=json_normalizer-demo-1-running-the-function-from-a-pandas-dataframe>json_normalizer, Demo 1: Running the function from a Pandas dataframe</h3><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;current&#34;</span><span class=p>,</span> <span class=n>prompt</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>data</span><span class=o>=</span><span class=n>df</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>True</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt; The shape of the output dataframe is:  (135, 7)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+
+
+Do you want see a sample? [y/n] y
+
+
+   sleep captured_at  summary.totalMinutesAsleep  summary.totalSleepRecords  \
+30    []  2020-08-13                           0                          0   
+8     []  2020-07-23                           0                          0   
+14    []  2020-07-29                           0                          0   
+14    []  2020-07-29                           0                          0   
+58    []  2020-09-10                           0                          0   
+..   ...         ...                         ...                        ...   
+77    []  2020-10-04                           0                          0   
+60    []  2020-09-12                           0                          0   
+58    []  2020-09-10                           0                          0   
+69    []  2020-10-03                           0                          0   
+31    []  2020-08-17                           0                          0   
+
+    summary.totalTimeInBed  uniqueRowID  participant_id  
+30                       0      1630190            9032  
+8                        0      1366764            9032  
+14                       0      1427570            9032  
+14                       0      1427570            9032  
+58                       0      2020673            9032  
+..                     ...          ...             ...  
+77                       0      2362473            9032  
+60                       0      2046203            9032  
+58                       0      2020673            9032  
+69                       0      2353843            9032  
+31                       0      1677049            9032  
+
+[1350 rows x 7 columns]
+
+
+Do you want to upload? [y/n] y
+What do you want the prefix for the file to be? demo
+
+
+fitbit current sleep aggSummary = False
+./output_csv/demo-sleep.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo-sleep.csv
+Uploaded ./output_csv/demo-sleep.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+</code></pre><blockquote><p><strong>Notice that there are user input options above. These user inputs are:</strong></p><ol><li>Seeing a random sample of 10 lines of the data before uploading. If there are less than 10 lines, the data will be randomly repeated.</li><li>An option to upload the data.</li><li>If uploading, a prefix can be designated to help distinguish the source of the data.</li></ol></blockquote><blockquote><p><strong>Below is a screenshot of Azure&rsquo;s ML Studio to show where the dataset ends up:</strong></p></blockquote><blockquote><p><strong>This screenshot shows that the code auto-generates the description with the input info:</strong></p></blockquote><h3 id=json_normalizer-demo-2-what-happens-if-you-try-to-use-the-wrong-inputs>json_normalizer, Demo 2: What happens if you try to use the wrong inputs</h3><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;historical&#34;</span><span class=p>,</span> <span class=n>prompt</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>data</span><span class=o>=</span><span class=n>df</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>True</span><span class=p>)</span>
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+Exception                                 Traceback (most recent call last)
+
+&lt;ipython-input-5-e3878ef1b7d9&gt; in &lt;module&gt;
+----&gt; 1 json_normalizer(&quot;fitbit&quot;, &quot;historical&quot;, prompt[1], data=df, pandas=True)
+
+
+/mnt/batch/tasks/shared/LS_root/mounts/clusters/jch122-faster/code/Users/jch122/AzureNormalizePipeline/json_normalizer.py in json_normalizer(device, timePeriod, promptName, data, aggSummary, ignoreInputs, prefix, pandas)
+    131     # dealing with no data in output
+    132     if output_df.shape == (0,0):
+--&gt; 133         raise Exception(&quot;No data in output dataframe. Check inputs.&quot;)
+    134     else:
+    135         print(&quot;&gt;&gt;&gt; The shape of the output dataframe is: &quot;, output_df.shape)
+
+
+Exception: No data in output dataframe. Check inputs.
+</code></pre><p>The custom exception was added for when a the data outputs a dataframe shape of (0,0). If the the entire dataframe has no data, most likely the inputs are incorrect. In the case above, prompt[1] was from the fitbit current list, so the promptname &lsquo;covid_fitbit_steps_intraday_backfill&rsquo; could not be found in the appropriate keyword-argument list to run json_normalize.</p><p>However, there are times when the data has missing rows for specific datasets and can handle a some missing data. See below:</p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;historical&#34;</span><span class=p>,</span> <span class=s2>&#34;covid_fitbit_heart_rate_intraday_backfill&#34;</span><span class=p>,</span> <span class=n>data</span><span class=o>=</span><span class=n>df</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>True</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt; The shape of the output dataframe is:  (217540, 9)
+&gt;&gt;&gt; The number of rows that did not have data are: 11
+
+
+Do you want see a sample? [y/n] y
+
+
+        hRZ-max  hRZ-min      hRZ-name  hRZ-minutes  hRZ-caloriesOut  \
+111964       74       30  Out of Range        444.0        389.66028   
+168999      220      125          Peak          0.0          0.00000   
+6224         74       30  Out of Range        444.0        389.66028   
+193240       74       30  Out of Range        827.0        696.29168   
+74738       126      104        Cardio         22.0        113.38328   
+...         ...      ...           ...          ...              ...   
+179296       74       30  Out of Range        364.0        302.07828   
+131079      220      135          Peak          0.0          0.00000   
+46946       126      104        Cardio         16.0         66.68664   
+214120       74       30  Out of Range        208.0        167.83896   
+108782      126      104        Cardio          1.0          1.19940   
+
+       captured_at.dateTime activities-heart.value.restingHeartRate  \
+111964           2020-05-01                                      70   
+168999           2020-07-05                                      68   
+6224             2020-05-01                                      70   
+193240           2020-03-07                                      70   
+74738            2019-10-09                                      69   
+...                     ...                                     ...   
+179296           2020-08-05                                      74   
+131079           2020-11-24                                      63   
+46946            2019-08-26                                      73   
+214120           2020-07-24                                      74   
+108782           2020-02-23                                      69   
+
+        uniqueRowID  participant_id  
+111964      1769065            9032  
+168999      2370051            9032  
+6224        3558015            9032  
+193240      2687980            9032  
+74738       1461419            9032  
+...             ...             ...  
+179296      2519337            9032  
+131079      3730999            9032  
+46946       1187858            9032  
+214120      2988542            9032  
+108782      1737237            9032  
+
+[2175400 rows x 9 columns]
+
+
+Do you want to upload? [y/n] n
+</code></pre><h3 id=json_normalizer-demo-3-what-is-aggsummary>json_normalizer, Demo 3: What is aggSummary?</h3><p>For some promptNames, especially the Garmin promptNames, there is a aggregated summary that encasulates the entire observation period, and a nested summary that captures more granular observation periods. To illustrate this, the json structure of the promptName covid_garmin_activity for the &lsquo;current&rsquo; timePeriod is shown below. Summary is highlighted in green and aggregatedSummary is highlighted in purple.</p><p>In this dataset, an output for a single line would look like this:</p><h4 id=codeaggregatedsummarycode-of-covid_garmin_activity>aggregatedSummary of covid_garmin_activity:</h4><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>pandas</span> <span class=kn>as</span> <span class=nn>pd</span>
+<span class=kn>import</span> <span class=nn>numpy</span> <span class=kn>as</span> <span class=nn>np</span>
+<span class=kn>from</span> <span class=nn>pandas</span> <span class=kn>import</span> <span class=n>json_normalize</span>
+<span class=kn>import</span> <span class=nn>json</span>
+
+<span class=n>promptValue</span> <span class=o>=</span> <span class=s2>&#34;covid_garmin_activity&#34;</span>
+<span class=n>chars</span> <span class=o>=</span> <span class=s1>&#39;&#34;&#39;</span>
+<span class=n>subsetForTransformation</span> <span class=o>=</span> <span class=n>df</span><span class=p>[(</span><span class=n>df</span><span class=o>.</span><span class=n>prompt_name</span> <span class=o>==</span> <span class=n>promptValue</span><span class=p>)]</span>
+
+<span class=n>pd_current_json_value</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>json_normalize</span><span class=p>(</span><span class=n>data</span><span class=o>=</span><span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>subsetForTransformation</span><span class=p>[</span><span class=s2>&#34;json_value&#34;</span><span class=p>]</span><span class=o>.</span><span class=n>iloc</span><span class=p>[</span><span class=mi>93</span><span class=p>]</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\\</span><span class=s2>&#34;</span><span class=p>,</span><span class=s2>&#34;&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>strip</span><span class=p>(</span><span class=n>chars</span><span class=p>)),))</span>
+
+<span class=n>pd_current_json_value</span>
+</code></pre></div><pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre><p></p><h4 id=codesummarycode-of-covid_garmin_activity>Summary of covid_garmin_activity:</h4><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=n>pd_current_json_value</span> <span class=o>=</span> <span class=n>pd</span><span class=o>.</span><span class=n>DataFrame</span><span class=p>(</span><span class=n>json_normalize</span><span class=p>(</span>
+                                        <span class=n>data</span><span class=o>=</span><span class=n>json</span><span class=o>.</span><span class=n>loads</span><span class=p>(</span><span class=n>subsetForTransformation</span><span class=p>[</span><span class=s2>&#34;json_value&#34;</span><span class=p>]</span><span class=o>.</span><span class=n>iloc</span><span class=p>[</span><span class=mi>93</span><span class=p>]</span><span class=o>.</span><span class=n>replace</span><span class=p>(</span><span class=s2>&#34;</span><span class=se>\\</span><span class=s2>&#34;</span><span class=p>,</span><span class=s2>&#34;&#34;</span><span class=p>)</span><span class=o>.</span><span class=n>strip</span><span class=p>(</span><span class=n>chars</span><span class=p>)),</span>
+                                        <span class=n>record_path</span> <span class=o>=</span>  <span class=s2>&#34;activities&#34;</span><span class=p>,</span> <span class=n>meta</span> <span class=o>=</span>  <span class=s2>&#34;captured_at&#34;</span><span class=p>,))</span>
+<span class=n>pd_current_json_value</span>
+</code></pre></div><pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre><p></p><p>The reason that this option exists is that for some promptNames, it makes more sense to use the aggregatedSummary compared to looking at the underlying data. An example of this is if you wanted the step count of an entire day.</p><h3 id=json_normalizer-demo-4-ignoring-inputs>json_normalizer, Demo 4: Ignoring Inputs</h3><p>If a user wants to iterate over a list prompt names, one may want to turn off the [y/n] user inputs. To do so, set ignoreInputs to True. Normally, one would still want to set the desired prefix of the filepath. Thus, input the desired prefix into prefix.</p><p>This is demonstrated below on all the promptNames in Garmin in the current time period (Note: promptName covid_garmin_daily may take a while to run).</p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=n>prompt</span> <span class=o>=</span> <span class=n>whichPromptNames</span><span class=p>(</span><span class=s2>&#34;garmin&#34;</span><span class=p>,</span> <span class=s2>&#34;current&#34;</span><span class=p>)</span>
+<span class=c1>#print(&#34;\n&gt;&gt;&gt; garmin, current:&#34;, prompt)</span>
+<span class=k>for</span> <span class=n>pmt</span> <span class=ow>in</span> <span class=n>prompt</span><span class=p>:</span>
+    <span class=k>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;</span><span class=se>\n</span><span class=s2>&gt;&gt;&gt;The prompt name is: {pmt}&#34;</span><span class=p>)</span>
+    <span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;garmin&#34;</span><span class=p>,</span> <span class=s2>&#34;current&#34;</span><span class=p>,</span> <span class=n>pmt</span><span class=p>,</span> <span class=n>data</span><span class=o>=</span><span class=n>df</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>True</span><span class=p>,</span> <span class=n>ignoreInputs</span><span class=o>=</span><span class=bp>True</span><span class=p>,</span> <span class=n>prefix</span><span class=o>=</span><span class=s2>&#34;demo_2&#34;</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt;The prompt name is: covid_garmin_activity
+&gt;&gt;&gt; The shape of the output dataframe is:  (143, 28)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+garmin current covid_garmin_activity aggSummary = False
+./output_csv/demo_2-covid_garmin_activity.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_2-covid_garmin_activity.csv
+Uploaded ./output_csv/demo_2-covid_garmin_activity.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+
+&gt;&gt;&gt;The prompt name is: covid_garmin_daily
+&gt;&gt;&gt; The shape of the output dataframe is:  (4661, 35)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+garmin current covid_garmin_daily aggSummary = False
+./output_csv/demo_2-covid_garmin_daily.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_2-covid_garmin_daily.csv
+Uploaded ./output_csv/demo_2-covid_garmin_daily.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+
+&gt;&gt;&gt;The prompt name is: covid_garmin_epoch
+&gt;&gt;&gt; The shape of the output dataframe is:  (18431, 16)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+garmin current covid_garmin_epoch aggSummary = False
+./output_csv/demo_2-covid_garmin_epoch.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_2-covid_garmin_epoch.csv
+Uploaded ./output_csv/demo_2-covid_garmin_epoch.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+
+&gt;&gt;&gt;The prompt name is: covid_garmin_sleep
+&gt;&gt;&gt; The shape of the output dataframe is:  (2349, 19)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+garmin current covid_garmin_sleep aggSummary = False
+./output_csv/demo_2-covid_garmin_sleep.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_2-covid_garmin_sleep.csv
+Uploaded ./output_csv/demo_2-covid_garmin_sleep.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+</code></pre><h3 id=json_normalizer-demo-5-azure-dataset-versus-pandas-dataframe>json_normalizer, Demo 5: Azure Dataset versus Pandas DataFrame</h3><p>Although json_normalizer can use Azure Datasets, it is advised to use a pandas dataframe instead because the time it takes to run using an Azure Dataset is much greater than a pandas dataframe. See below:</p><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>time</span>
+
+<span class=n>start</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+
+<span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;historical&#34;</span><span class=p>,</span> <span class=s2>&#34;covid_fitbit_steps_intraday_backfill&#34;</span><span class=p>,</span> <span class=n>data</span><span class=o>=</span><span class=n>dataset</span><span class=p>,</span>  <span class=n>ignoreInputs</span><span class=o>=</span><span class=bp>True</span><span class=p>,</span> <span class=n>prefix</span><span class=o>=</span><span class=s2>&#34;demo_3&#34;</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>False</span><span class=p>)</span>
+
+<span class=n>end</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+
+<span class=k>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;Time ellapsed: {end - start:.5f} seconds.&#34;</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt; The shape of the output dataframe is:  (58400, 4)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+fitbit historical covid_fitbit_steps_intraday_backfill aggSummary = False
+./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv
+Uploaded ./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+Time ellapsed: 40.05135 seconds.
+</code></pre><div class=highlight><pre class=chroma><code class=language-python data-lang=python><span class=kn>import</span> <span class=nn>time</span>
+
+<span class=n>start</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+
+<span class=n>json_normalizer</span><span class=p>(</span><span class=s2>&#34;fitbit&#34;</span><span class=p>,</span> <span class=s2>&#34;historical&#34;</span><span class=p>,</span> <span class=s2>&#34;covid_fitbit_steps_intraday_backfill&#34;</span><span class=p>,</span> <span class=n>data</span><span class=o>=</span><span class=n>df</span><span class=p>,</span>  <span class=n>ignoreInputs</span><span class=o>=</span><span class=bp>True</span><span class=p>,</span> <span class=n>prefix</span><span class=o>=</span><span class=s2>&#34;demo_3&#34;</span><span class=p>,</span> <span class=n>pandas</span><span class=o>=</span><span class=bp>True</span><span class=p>)</span>
+
+<span class=n>end</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>time</span><span class=p>()</span>
+
+<span class=k>print</span><span class=p>(</span><span class=n>f</span><span class=s2>&#34;Time ellapsed: {end - start:.5f} seconds.&#34;</span><span class=p>)</span>
+</code></pre></div><pre><code>&gt;&gt;&gt; The shape of the output dataframe is:  (58400, 4)
+&gt;&gt;&gt; The number of rows that did not have data are: 0
+fitbit historical covid_fitbit_steps_intraday_backfill aggSummary = False
+./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv
+Uploading an estimated of 1 files
+Uploading ./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv
+Uploaded ./output_csv/demo_3-covid_fitbit_steps_intraday_backfill.csv, 1 files out of an estimated total of 1
+Uploaded 1 files
+&gt;&gt;&gt; Upload Successful!
+Time ellapsed: 3.36645 seconds.
+</code></pre><div class=highlight><pre class=chroma><code class=language-python data-lang=python>
+</code></pre></div><div class="share-icons d-flex justify-content-center d-print-none"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&text=Test%20Post&tw_p=tweetbutton" class=p-2 title="Share on Twitter" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Tweet</small></div></a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&t=Test%20Post" class=p-2 title="Share on Facebook" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.joehsieh.com%2fpost%2ftest-post%2f&title=Test%20Post&source=mattbutton.com" class=p-2 title="Share on LinkedIn" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href=javascript:window.print() title="Print this article" class=p-2 target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-print fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Print</small></div></a></div></div></div><div class="sidebar d-print-none d-none d-xl-block"><h2>Joe Hsieh</h2><div>Wecome! This is where I discuss projects, interests, and my passions</div><a href=https://www.joehsieh.com/about/ class="btn btn-outline-secondary mt-3" role=button>Read More...</a><h2 class=mt-4>Top Posts</h2><a href=https://www.joehsieh.com/post/creating-a-new-theme/ class=nav-link>Creating a New Theme</a>
 <a href=https://www.joehsieh.com/post/migrate-from-jekyll/ class=nav-link>Migrate to Hugo from Jekyll</a><h2 class=mt-4>Recent Posts</h2><nav class="nav flex-column"><a href=https://www.joehsieh.com/post/creating-a-new-theme/ class=nav-link>Creating a New Theme</a>
 <a href=https://www.joehsieh.com/post/migrate-from-jekyll/ class=nav-link>Migrate to Hugo from Jekyll</a>
 <a href=https://www.joehsieh.com/post/test-post/ class=nav-link>Test Post</a>
