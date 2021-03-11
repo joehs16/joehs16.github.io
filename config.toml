@@ -1,7 +1,7 @@
-baseurl = "https://joehs16.github.io/"
+baseurl = "https://www.joehsieh.com/"
 title = "JOEHSIEH.COM"
 author = "Joseph Hsieh"
-copyright = "Copyright 2021, Joseph Hsieh, All rights reserved."
+copyright = "© 2021, Joseph Hsieh, All rights reserved."
 canonifyurls = true
 paginate = 3
 theme = "silhouette-hugo"
