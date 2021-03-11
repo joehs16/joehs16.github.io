@@ -1,7 +1,7 @@
 baseurl = "https://joehs16.github.io/"
 title = "JOEHSIEH.COM"
 author = "Joseph Hsieh"
-copyright = 'Copyright 2021, Joseph Hsieh, All rights reserved. Cover Photo Photo by <a href="https://unsplash.com/@actionvance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">ActionVance</a> on <a href="/@actionvance?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>'
+copyright = "Copyright 2021, Joseph Hsieh, All rights reserved."
 canonifyurls = true
 paginate = 3
 theme = "silhouette-hugo"
