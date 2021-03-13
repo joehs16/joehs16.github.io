@@ -1,15 +1,21 @@
----
-title: Demo of Azure Normalize Pipeline"
-date: 2021-03-09T21:19:02-05:00
-draft: false
-categories:
-  -  ["Projects"]
-tags:
-  - ["Duke",
-    "CovIdentify",
++++
+title = "Demo of Azure Normalize Pipeline"
+description = "test"
+tags = [
+    "Duke",
     "themes",
-    "development"]
----
+    "development",
+    "ETL",
+]
+date = "2021-03-09"
+categories = [
+    "Projects",
+]
+menu = "main"
+featureImage = "images/joe_chapel.JPG"
++++
+
+
 
 # Demo of AzureNormalizePipeline
 Last edited: Mar 05, 2021
