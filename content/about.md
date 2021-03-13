@@ -4,6 +4,8 @@ date = "2021-03-09"
 menu = "main"
 +++
 
+#![joe_chapel](./static/images/joe_chapel.jpg)
+
 ## 
 
 ## Background

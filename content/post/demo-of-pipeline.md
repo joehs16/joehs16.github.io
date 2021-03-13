@@ -1,11 +1,14 @@
 ---
-title: "Test Post"
+title: Demo of Azure Normalize Pipeline"
 date: 2021-03-09T21:19:02-05:00
 draft: false
 categories:
-  - Joe
+  -  ["Projects"]
 tags:
-  - Joe
+  - ["Duke",
+    "CovIdentify",
+    "themes",
+    "development"]
 ---
 
 # Demo of AzureNormalizePipeline
