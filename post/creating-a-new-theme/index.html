@@ -607,15 +607,17 @@ $ vi themes/zafta/layouts/_default/single.html
 </code></pre><p>Note that we removed the date logic from the default template and put it in the post template. Generate the web site and verify the results. Posts have dates and the about page doesn&rsquo;t.</p><h3 id=dont-repeat-yourself>Don&rsquo;t Repeat Yourself</h3><p>DRY is a good design goal and Hugo does a great job supporting it. Part of the art of a good template is knowing when to add a new template and when to update an existing one. While you&rsquo;re figuring that out, accept that you&rsquo;ll be doing some refactoring. Hugo makes that easy and fast, so it&rsquo;s okay to delay splitting up a template.</p><div class="share-icons d-flex justify-content-center d-print-none"><a href="https://twitter.com/intent/tweet?url=https%3a%2f%2fwww.joehsieh.com%2fpost%2fcreating-a-new-theme%2f&text=Creating%20a%20New%20Theme&tw_p=tweetbutton" class=p-2 title="Share on Twitter" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-twitter fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Tweet</small></div></a><a href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fwww.joehsieh.com%2fpost%2fcreating-a-new-theme%2f&t=Creating%20a%20New%20Theme" class=p-2 title="Share on Facebook" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-facebook fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwww.joehsieh.com%2fpost%2fcreating-a-new-theme%2f&title=Creating%20a%20New%20Theme&source=mattbutton.com" class=p-2 title="Share on LinkedIn" target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fab fa-linkedin fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Share</small></div></a><a href=javascript:window.print() title="Print this article" class=p-2 target=_blank rel=nofollow><div><span class=fa-stack><i class="fas fa-circle fa-stack-2x"></i><i class="fa fa-print fa-stack-1x fa-inverse"></i></span></div><div class="fa-inverse text-center"><small>Print</small></div></a></div></div></div><div class="sidebar d-print-none d-none d-xl-block"><h2>Joe Hsieh</h2><div>Welcome! This is where I discuss projects, interests, and my passions</div><a href=https://www.joehsieh.com/about/ class="btn btn-outline-secondary mt-3" role=button>Read More...</a><h2 class=mt-4>Top Posts</h2><a href=https://www.joehsieh.com/post/creating-a-new-theme/ class=nav-link>Creating a New Theme</a>
 <a href=https://www.joehsieh.com/post/migrate-from-jekyll/ class=nav-link>Migrate to Hugo from Jekyll</a><h2 class=mt-4>Recent Posts</h2><nav class="nav flex-column"><a href=https://www.joehsieh.com/post/creating-a-new-theme/ class=nav-link>Creating a New Theme</a>
 <a href=https://www.joehsieh.com/post/migrate-from-jekyll/ class=nav-link>Migrate to Hugo from Jekyll</a>
-<a href=https://www.joehsieh.com/post/test-post/ class=nav-link>Test Post</a>
+<a href=https://www.joehsieh.com/post/demo-of-pipeline/ class=nav-link>Demo of Azure Normalize Pipeline</a>
 <a href=https://www.joehsieh.com/post/goisforlovers/ class=nav-link>(Hu)go Template Primer</a>
 <a href=https://www.joehsieh.com/post/hugoisforlovers/ class=nav-link>Getting Started with Hugo</a></nav><h2 class="mt-4 text-capitalize">categories</h2><nav class="nav flex-column"><a href=https://www.joehsieh.com/categories/development/ class=nav-link>development
 <span class="badge badge-pill badge-secondary">2</span></a>
 <a href=https://www.joehsieh.com/categories/golang/ class=nav-link>golang
 <span class="badge badge-pill badge-secondary">2</span></a>
-<a href=https://www.joehsieh.com/categories/joe/ class=nav-link>joe
+<a href=https://www.joehsieh.com/categories/projects/ class=nav-link>projects
 <span class="badge badge-pill badge-secondary">1</span></a></nav><h2 class="mt-4 text-capitalize">tags</h2><nav class="nav flex-column"><a href=https://www.joehsieh.com/tags/development/ class=nav-link>development
-<span class="badge badge-pill badge-secondary">2</span></a>
+<span class="badge badge-pill badge-secondary">3</span></a>
+<a href=https://www.joehsieh.com/tags/themes/ class=nav-link>themes
+<span class="badge badge-pill badge-secondary">3</span></a>
 <a href=https://www.joehsieh.com/tags/featured/ class=nav-link>featured
 <span class="badge badge-pill badge-secondary">2</span></a>
 <a href=https://www.joehsieh.com/tags/go/ class=nav-link>go
@@ -624,11 +626,11 @@ $ vi themes/zafta/layouts/_default/single.html
 <span class="badge badge-pill badge-secondary">2</span></a>
 <a href=https://www.joehsieh.com/tags/hugo/ class=nav-link>hugo
 <span class="badge badge-pill badge-secondary">2</span></a>
-<a href=https://www.joehsieh.com/tags/themes/ class=nav-link>themes
-<span class="badge badge-pill badge-secondary">2</span></a>
-<a href=https://www.joehsieh.com/tags/jekyll/ class=nav-link>jekyll
+<a href=https://www.joehsieh.com/tags/duke/ class=nav-link>duke
 <span class="badge badge-pill badge-secondary">1</span></a>
-<a href=https://www.joehsieh.com/tags/joe/ class=nav-link>joe
+<a href=https://www.joehsieh.com/tags/etl/ class=nav-link>etl
+<span class="badge badge-pill badge-secondary">1</span></a>
+<a href=https://www.joehsieh.com/tags/jekyll/ class=nav-link>jekyll
 <span class="badge badge-pill badge-secondary">1</span></a>
 <a href=https://www.joehsieh.com/tags/templates/ class=nav-link>templates
 <span class="badge badge-pill badge-secondary">1</span></a></nav></div></div><footer class="mt-auto footer d-print-none"><div class=container-fluid><div class="row justify-content-center"><div class="col-md-4 col-xl-3"><h5>© 2021, Joseph Hsieh, All rights reserved.</h5>Cover Photo by
