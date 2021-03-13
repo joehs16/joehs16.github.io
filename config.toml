@@ -13,10 +13,10 @@ pygmentsUseClasses=true
 
 [params]
 author = "Joe Hsieh"
-introDescription = "Wecome! This is where I discuss projects, interests, and my passions"
+introDescription = "Welcome! This is where I discuss projects, interests, and my passions"
 contentSharing = "I'm happy for you to share content on this site, but please provide attribution."
 
 [social]
-#instagram = "realmattbutton"
+#instagram = ""
 linkedin = "joseph-hsieh-49972219"
-#twitter = "realmattbutton"
+#twitter = ""
