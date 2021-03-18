@@ -1,5 +1,5 @@
 +++
-draft = True
+draft = "True"
 title = "(Hu)go Template Primer"
 description = ""
 tags = [
