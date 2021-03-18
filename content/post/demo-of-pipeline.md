@@ -1,4 +1,5 @@
 +++
+draft = False
 title = "Demo of Azure Normalize Pipeline"
 description = "test"
 tags = [
