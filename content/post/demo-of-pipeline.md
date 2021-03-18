@@ -9,7 +9,8 @@ tags = [
 ]
 date = "2021-03-09"
 categories = [
-    "Projects",
+    "Projects", 
+    "Data Science",
 ]
 menu = "main"
 featureImage = "images/joe_chapel.JPG"
