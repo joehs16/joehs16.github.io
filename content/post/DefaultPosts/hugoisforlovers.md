@@ -1,5 +1,4 @@
 +++
-draft = "True"
 title = "Getting Started with Hugo"
 description = ""
 tags = [

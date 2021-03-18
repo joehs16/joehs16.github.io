@@ -1,5 +1,4 @@
 ---
-draft = "True"
 date = "2014-03-10"
 linktitle: Migrating from Jekyll
 menu:
