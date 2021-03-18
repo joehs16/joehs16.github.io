@@ -4,9 +4,7 @@ date = "2021-03-09"
 menu = "main"
 featureImage = "images/joe_chapel.png"
 +++
-
-<img src="joe_chapel.JPG" width="100">
-
+{{< figure src="../images/joe_c.JPEG" width="100%">}}
 ## 
 
 ## Background
