@@ -5,14 +5,12 @@ menu = "main"
 featureImage = "images/joe_chapel.png"
 +++
 
-![joe_chapel](../images/joe_c.jpeg)
+<img src="joe_chapel.JPG" width="100">
 
 ## 
 
 ## Background
-
-
-
+#<img src="joe_chapel.JPG" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>
 ## Education
 I am currently enrolled in a 2-year Masters Program studying Data Science at Duke University (Durham, NC) with an anticipated graduation date of May, 2021.
 
