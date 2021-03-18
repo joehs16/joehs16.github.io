@@ -2,10 +2,10 @@
 title = "About Me"
 date = "2021-03-09"
 menu = "main"
-featureImage = "images/joe_chapel.jpg"
+featureImage = "images/joe_chapel.png"
 +++
 
-![joe_chapel](../images/joe_chapel.JPG)
+![joe_chapel](../images/joe_chapel.png)
 
 ## 
 
