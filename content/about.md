@@ -5,7 +5,7 @@ menu = "main"
 featureImage = "images/joe_chapel.png"
 +++
 
-![joe_chapel](../images/joe_chapel.png)
+![joe_chapel](../images/joe_c.jpeg)
 
 ## 
 
@@ -16,7 +16,7 @@ featureImage = "images/joe_chapel.png"
 ## Education
 I am currently enrolled in a 2-year Masters Program studying Data Science at Duke University (Durham, NC) with an anticipated graduation date of May, 2021.
 
-I received my undergraduate degree from Drexel University (Philadelphia, PA), marjoring in Materials Science and Engineering with double minors in Nuclear Engineering and Business Administration.
+I received my undergraduate degree from Drexel University (Philadelphia, PA), majoring in Materials Science and Engineering with double minors in Nuclear Engineering and Business Administration.
 
 ### DUKE MIDS
 
